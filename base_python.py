@@ -27,21 +27,23 @@
 
 # vie = 7
 # mot_mystere = 'bonjour'
-# mot_devine = ''
+# mot_devine = '_______'
 # mot_trouve = False
 
 # while (0 < vie <= 7) and (mot_trouve == False):
 #     print("Il vous reste : ", vie, "vies.")
+#     print("Votre mot actuel :", mot_devine)
 #     lettre_devine = input("Entrez une lettre : ")
 #     if len(lettre_devine) != 1:
 #         print("Vous devez entrer seulement une lettre")
-#         break
+#         vie = vie-1
 #     else:
 #         if lettre_devine in mot_mystere:
 #             print(lettre_devine, ': OK')
-#             mot_devine = mot_devine+lettre_devine
-#             print("Votre mot actuel :", mot_devine)
-#             if len(mot_devine) == len(mot_mystere):
+#             for i in range(len(mot_mystere)):
+#                 if mot_mystere[i] == lettre_devine:
+#                     mot_devine = mot_devine[:i] + lettre_devine + mot_devine[i+1:]
+#             if mot_devine == mot_mystere:
 #                 print('Felicitations. Vous avez devinez', mot_mystere)
 #                 mot_trouve = True
 #         else:
